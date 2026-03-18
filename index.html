@@ -68,10 +68,9 @@
     const tix = parseInt(document.getElementById('ticketNumber').value) || 0;
     const n = parseInt(document.getElementById('npLevel').value) || 1;
 
-    const pulls = sq + tix * 3;
-    const cards = Math.floor(pulls / 30) * 11;
+    const cards = Math.floor(sq / 3) + Math.floor(sq / 30) + tix + Math.floor(tix / 10);
 
-    if (n === 1 && pulls >= 900) {
+    if (n === 1 && cards >= 330) {
       document.getElementById('responseBox').innerText = 'PITY';
       return;
     }
